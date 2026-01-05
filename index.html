@@ -4,56 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robin Ace Tapang | Professional Portfolio</title>
-<meta name="description" content="Professional portfolio of Robin Ace Tapang, Bachelor of Industrial Technology - Computer Technology major.">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- AOS Scroll Animations -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-  body {
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(180deg, #0d0d0d, #1a001a);
     color: #e5e5e5;
     overflow-x: hidden;
-  }
-  a { text-decoration: none; }
+}
 
-  header {
-    padding: 6rem 1.5rem 5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+a { text-decoration: none; }
 
-  /* Name + Verified Badge */
-  .profile-header {
+/* Header & Name with Seasonal Animation */
+header { text-align: center; padding: 6rem 1.5rem 5rem; position: relative; overflow: hidden; }
+.profile-header {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
     position: relative;
-    z-index: 10;
-  }
-  .profile-header h1 {
+}
+.profile-header h1 {
     font-size: 3rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #FF69B4;
-  }
-  .verified-badge {
-    width: 28px;
-    height: 28px;
-  }
+    position: relative;
+}
+.profile-header h1 span.name { position: relative; display: inline-block; }
+.verified-badge { width: 28px; height: 28px; }
 
-  /* Header Buttons */
-  .btn {
+/* Seasonal animation classes */
+.name.summer { color: #FF4500; text-shadow: 0 0 20px #FF4500; animation: burn 2s infinite; }
+@keyframes burn {
+    0%,100%{text-shadow:0 0 10px #FF4500,0 -5px 20px #FFA500; transform:translateY(0);}
+    50%{text-shadow:0 0 25px #FF6347,0 -10px 40px #FF8C00; transform:translateY(-2px);}
+}
+
+.name.winter { color: #00FFFF; text-shadow: 0 0 10px #00FFFF; animation: freeze 3s infinite; }
+@keyframes freeze {
+    0%,100%{text-shadow:0 0 10px #00FFFF,0 -5px 20px #B0E0E6; transform:translateY(0);}
+    50%{text-shadow:0 0 25px #ADD8E6,0 -10px 40px #B0E0E6; transform:translateY(1px);}
+}
+
+.name.autumn { color: #FFA500; animation: leaves 5s infinite; }
+@keyframes leaves {
+    0% {transform:translateY(0);}
+    25% {transform:translateY(5px);}
+    50% {transform:translateY(0);}
+    75% {transform:translateY(3px);}
+    100% {transform:translateY(0);}
+}
+
+/* Buttons */
+.btn {
     display: inline-block;
     padding: 0.8rem 1.6rem;
     border-radius: 999px;
@@ -62,14 +72,14 @@
     font-weight: 600;
     margin: 0.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  }
-  .btn:hover {
+}
+.btn:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 12px 30px rgba(255,20,147,0.35);
     filter: brightness(1.2);
-  }
+}
 
-  nav {
+nav {
     position: sticky;
     top: 0;
     background: rgba(13,0,13,0.95);
@@ -79,73 +89,44 @@
     gap: 2rem;
     padding: 1rem;
     z-index: 100;
-  }
-  nav a {
-    color: #e5e5e5;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  nav a:hover { color: #FF69B4; }
+}
+nav a { color: #e5e5e5; font-weight: 500; transition: color 0.3s ease; }
+nav a:hover { color: #FF69B4; }
 
-  section { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
-  h2 { font-size: 2rem; margin-bottom: 2rem; border-left: 4px solid #FF69B4; padding-left: 1rem; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
-  .card {
+section { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
+h2 { font-size: 2rem; margin-bottom: 2rem; border-left: 4px solid #FF69B4; padding-left: 1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+.card {
     background: rgba(26,0,26,0.85);
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid #4b004b;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(255,105,180,0.3);
-  }
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(255,105,180,0.3); }
 
-  /* Nezuko + Particle Container */
-  .nezuko-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 3rem;
-    height: 350px;
-  }
-  #nezuko-animation { width: 240px; height: 350px; z-index: 2; position: relative; }
-  #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    pointer-events: none;
-    z-index: 1;
-  }
+/* Nezuko + Particles */
+.nezuko-container { display:flex; justify-content:center; position:relative; margin-top:3rem; height:350px; }
+#nezuko-animation { width:240px; height:350px; z-index:2; position: relative; }
+#particles-js { position:absolute; width:100%; height:100%; top:0; left:0; pointer-events:none; z-index:1; }
 
-  /* Footer & Quotes */
-  footer { text-align: center; padding: 3rem 1rem; background: #0a0010; color: #a3a3a3; }
-  .quote {
-    font-style: italic;
-    margin-top: 2rem;
-    color: #FFB6C1;
-    text-align: center;
-  }
-
+footer { text-align:center; padding:3rem 1rem; background:#0a0010; color:#a3a3a3; }
+.quote { font-style:italic; margin-top:2rem; color:#FFB6C1; text-align:center; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="profile-header">
-    <h1>Robin Ace Tapang <img class="verified-badge" src="verified-blue-badge.png" alt="Verified"></h1>
+    <h1><span class="name">Robin Ace Tapang</span> <img class="verified-badge" src="verified-blue-badge.png" alt="Verified"></h1>
   </div>
   <p>
-    I am a highly motivated Bachelor of Industrial Technology undergraduate majoring in Computer Technology. As a third-year student, I have developed strong knowledge in software, hardware, and network systems. I am proficient in programming languages including C++, Python, and JavaScript, and I am experienced with database management including SQL. I am also skilled in Microsoft and Google productivity apps, IDEs, and other software platforms. My expertise extends to hardware troubleshooting, system maintenance, and computer networking. I aim to leverage these skills to develop innovative IT solutions and contribute meaningfully to academic and professional technology environments.
+    I am a highly motivated Bachelor of Industrial Technology undergraduate majoring in Computer Technology. As a third-year student, I have strong knowledge in software, hardware, network systems, programming in C++, Python, JavaScript, SQL, and practical experience with Microsoft & Google apps. I am skilled in troubleshooting, maintenance, and integrating software and hardware solutions effectively.
   </p>
-
   <div style="margin-top: 2rem;">
     <a href="#projects" class="btn">View Projects</a>
     <a href="#contact" class="btn">Contact Me</a>
   </div>
-
   <div class="nezuko-container">
     <div id="nezuko-animation"></div>
     <div id="particles-js"></div>
@@ -164,7 +145,7 @@
 <section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p>
-    I am Robin Ace Tapang, a highly motivated Bachelor of Industrial Technology undergraduate majoring in Computer Technology. I have a comprehensive foundation in both hardware and software systems. My experience includes system troubleshooting, hardware assembly, configuration, and basic computer networking. I am proficient in programming languages such as C++, Python, and JavaScript, and skilled in database design and management using SQL. Additionally, I am competent with Microsoft Office Suite, Google Workspace applications, and multiple IDEs relevant to software development. Beyond technical skills, I possess analytical thinking, problem-solving, and a practical understanding of how software and hardware integrate to solve real-world challenges. As a passionate tech student, I continuously aim to improve my skills, take on challenging projects, and contribute to innovative technology solutions in academic and professional environments.
+    I am Robin Ace Tapang, a motivated Bachelor of Industrial Technology undergraduate majoring in Computer Technology...
   </p>
 </section>
 
@@ -174,7 +155,7 @@
     <div class="card">HTML, CSS, JavaScript</div>
     <div class="card">C++, Python, SQL</div>
     <div class="card">Hardware & System Troubleshooting</div>
-    <div class="card">Microsoft Office & Google Workspace</div>
+    <div class="card">Microsoft & Google Workspace</div>
     <div class="card">Database Management & Networking</div>
     <div class="card">Front-End Development Fundamentals</div>
   </div>
@@ -183,14 +164,8 @@
 <section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
   <div class="grid">
-    <div class="card">
-      <h3>Personal Portfolio Website</h3>
-      <p>Responsive web portfolio to showcase skills, projects, and achievements professionally.</p>
-    </div>
-    <div class="card">
-      <h3>Academic Computer Technology Projects</h3>
-      <p>Hands-on coursework projects covering programming, system fundamentals, and IT solutions.</p>
-    </div>
+    <div class="card"><h3>Portfolio Website</h3></div>
+    <div class="card"><h3>Academic Computer Technology Projects</h3></div>
   </div>
 </section>
 
@@ -198,8 +173,7 @@
   <h2>Achievements</h2>
   <div class="grid">
     <div class="card">
-      <h3>G.A.B Guardian AuroBox QR Code Attendance System</h3>
-      <p>Thesis Project 2024</p>
+      <h3>G.A.B Guardian AuroBox QR Code Attendance System - Thesis Project 2024</h3>
     </div>
   </div>
 </section>
@@ -207,12 +181,8 @@
 <section id="certificates" data-aos="fade-up">
   <h2>Certificates</h2>
   <div class="grid">
-    <div class="card">
-      <h3>Comptechniques: Augment Your Tech Knowledge in the Vital Environment of Technology 2023</h3>
-    </div>
-    <div class="card">
-      <h3>TechXperts Workshops Sessions - Bulacan Tech Expo 2023</h3>
-    </div>
+    <div class="card">Comptechniques 2023</div>
+    <div class="card">TechXperts Workshops - Bulacan Tech Expo 2023</div>
   </div>
 </section>
 
@@ -227,14 +197,20 @@
   <p>© 2026 Robin Ace Tapang. All rights reserved.</p>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
 
 <script>
-  // Initialize AOS
   AOS.init({ duration: 1200 });
+
+  // Seasonal animation randomizer
+  const nameEl = document.querySelector('.name');
+  const seasons = ['summer','winter','autumn'];
+  nameEl.classList.add(seasons[Math.floor(Math.random()*seasons.length)]);
+
+  // Verified Blue Badge is now just an img with src and alt
+  // Make sure verified-blue-badge.png exists in the folder
 
   // Load Nezuko Lottie Animation
   lottie.loadAnimation({
@@ -242,28 +218,24 @@
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'nezuko_animation.json' // Replace with correct path
+    path: 'nezuko_animation.json' // Replace with your JSON path
   });
 
-  // Cinematic Demon Slayer Particles
+  // tsParticles for cinematic powers
   tsParticles.load("particles-js", {
     fpsLimit: 60,
     interactivity: {
       detectsOn: "canvas",
-      events: {
-        onhover: { enable: true, mode: "repulse" },
-        onclick: { enable: true, mode: "push" },
-        resize: true
-      },
-      modes: { repulse: { distance: 150, duration: 0.6 }, push: { quantity: 5 } }
+      events: { onhover:{enable:true,mode:"repulse"}, onclick:{enable:true,mode:"push"}, resize:true },
+      modes: { repulse:{distance:150,duration:0.6}, push:{quantity:5} }
     },
-    particles: {
-      number: { value: 120 },
-      color: { value: ["#FF4500","#1E90FF","#00FA9A","#800080","#FFD700"] },
-      shape: { type: "circle" },
-      opacity: { value: 0.9, random: true },
-      size: { value: { min: 2, max: 6 }, random: true },
-      move: { enable: true, speed: 4, direction: "none", random: true, straight: false, out_mode: "out" }
+    particles:{
+      number:{value:120},
+      color:{value:["#FF4500","#1E90FF","#00FA9A","#800080","#FFD700"]},
+      shape:{type:"circle"},
+      opacity:{value:0.9,random:true},
+      size:{value:{min:2,max:6},random:true},
+      move:{enable:true,speed:4,direction:"none",random:true,straight:false,out_mode:"out"}
     }
   });
 
@@ -274,7 +246,7 @@
     "Your potential is limitless. / Walang hanggan ang iyong kakayahan. / Potansiyelin sınırsızdır.",
     "Keep pushing forward! / Patuloy lang sa pag-abante! / İlerlemeye devam et!"
   ];
-  document.getElementById('quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById('quote').innerText = quotes[Math.floor(Math.random()*quotes.length)];
 </script>
 
 </body>
