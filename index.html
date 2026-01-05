@@ -6,162 +6,137 @@
   <title>Robin Ace Tapang | Professional Portfolio</title>
   <meta name="description" content="Professional portfolio of Robin Ace Tapang, a third-year Computer Technology undergraduate." />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #020617, #0f172a);
+      background-color: #0a0a0a;
       color: #e5e7eb;
       line-height: 1.7;
+      scroll-behavior: smooth;
     }
-
     a { text-decoration: none; }
 
+    /* Header */
     header {
       padding: 5rem 1.5rem 4rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
+      color: #FFD700;
     }
-
     header p {
       margin-top: 1rem;
-      font-size: 1.1rem;
-      color: #94a3b8;
+      font-size: 1.2rem;
+      color: #cbd5f5;
     }
 
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #FFD700, #FFB800);
+      color: #0a0a0a;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 215, 0, 0.35);
+    }
+
+    /* Navigation */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(2, 6, 23, 0.95);
-      backdrop-filter: blur(8px);
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
       z-index: 100;
     }
-
     nav a {
-      color: #cbd5f5;
+      color: #e5e7eb;
       font-weight: 500;
       transition: color 0.3s ease;
     }
-
     nav a:hover {
-      color: #38bdf8;
+      color: #FFD700;
     }
 
+    /* Sections */
     section {
       max-width: 1000px;
       margin: 0 auto;
       padding: 4.5rem 1.5rem;
     }
-
     h2 {
       font-size: 2rem;
       margin-bottom: 2rem;
-      border-left: 4px solid #38bdf8;
+      border-left: 4px solid #FFD700;
       padding-left: 1rem;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.6rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #38bdf8, #60a5fa);
-      color: #020617;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
-
     .card {
-      background: rgba(2, 6, 23, 0.85);
+      background: rgba(15, 15, 30, 0.85);
       padding: 2rem;
       border-radius: 20px;
       border: 1px solid #1e293b;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(255, 215, 0, 0.25);
     }
 
-    /* Cute anime-style dancing character */
-    .anime-container {
+    /* Nezuko Lottie Animation Container */
+    .nezuko-container {
       display: flex;
       justify-content: center;
       margin-top: 3rem;
-    }
-
-    .anime {
-      width: 120px;
-      height: 180px;
       position: relative;
-      animation: dance 1.2s infinite ease-in-out;
+    }
+    #nezuko-animation {
+      width: 220px;
+      height: 300px;
     }
 
-    .head {
-      width: 60px;
-      height: 60px;
-      background: #fde68a;
-      border-radius: 50%;
-      margin: 0 auto;
-    }
-
-    .body {
-      width: 50px;
-      height: 70px;
-      background: #60a5fa;
-      border-radius: 12px;
-      margin: 0.5rem auto 0;
-    }
-
-    .leg {
-      width: 18px;
-      height: 50px;
-      background: #94a3b8;
-      position: absolute;
-      bottom: 0;
-      border-radius: 8px;
-    }
-
-    .leg.left { left: 30px; }
-    .leg.right { right: 30px; }
-
-    @keyframes dance {
-      0% { transform: rotate(0deg) translateY(0); }
-      25% { transform: rotate(3deg) translateY(-3px); }
-      50% { transform: rotate(0deg) translateY(0); }
-      75% { transform: rotate(-3deg) translateY(-3px); }
-      100% { transform: rotate(0deg) translateY(0); }
-    }
-
+    /* Footer */
     footer {
       text-align: center;
       padding: 3rem 1rem;
-      background: #020617;
+      background: #0a0a0a;
       color: #64748b;
+    }
+
+    /* Demon Slayer Particle Effects */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
     }
   </style>
 </head>
@@ -176,13 +151,9 @@
     <a href="#contact" class="btn">Contact Me</a>
   </div>
 
-  <div class="anime-container">
-    <div class="anime">
-      <div class="head"></div>
-      <div class="body"></div>
-      <div class="leg left"></div>
-      <div class="leg right"></div>
-    </div>
+  <div class="nezuko-container">
+    <div id="nezuko-animation"></div>
+    <div id="particles-js"></div>
   </div>
 </header>
 
@@ -194,14 +165,14 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p>
     I am Robin Ace Tapang, 22 years old, currently a third-year undergraduate pursuing a Computer Technology course. I am developing strong foundations in IT systems, web development, and computer hardware, with a clear goal of becoming a capable and reliable technology professional.
   </p>
 </section>
 
-<section id="skills">
+<section id="skills" data-aos="fade-up">
   <h2>Skills</h2>
   <div class="grid">
     <div class="card">HTML, CSS, JavaScript</div>
@@ -211,7 +182,7 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
   <div class="grid">
     <div class="card">
@@ -225,13 +196,13 @@
   </div>
 </section>
 
-<section id="resume">
+<section id="resume" data-aos="fade-up">
   <h2>Resume</h2>
   <p>You can download my complete curriculum vitae below.</p>
   <a class="btn" href="Robin-Ace-Tapang-CV.pdf" download>Download CV</a>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <p>If you would like to connect or discuss opportunities, feel free to reach out.</p>
   <p>Email: <a href="mailto:msalobenyaa@gmail.com">msalobenyaa@gmail.com</a></p>
@@ -241,5 +212,46 @@
   <p>© 2026 Robin Ace Tapang. All rights reserved.</p>
 </footer>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+
+<script>
+  // Initialize AOS
+  AOS.init({ duration: 1200 });
+
+  // Load Nezuko Lottie Animation
+  lottie.loadAnimation({
+    container: document.getElementById('nezuko-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'nezuko_animation.json' // Replace with your Nezuko Lottie JSON file
+  });
+
+  // Initialize Demon Slayer-style particles
+  tsParticles.load("particles-js", {
+    particles: {
+      number: { value: 60 },
+      color: { value: ["#E63946","#F77F00","#FFD700"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.8 },
+      size: { value: { min: 2, max: 5 } },
+      move: { enable: true, speed: 3, direction: "none", out_mode: "out" },
+      line_linked: { enable: false }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      },
+      modes: {
+        repulse: { distance: 100 },
+        push: { particles_nb: 4 }
+      }
+    }
+  });
+</script>
 </body>
 </html>
