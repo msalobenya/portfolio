@@ -1,299 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robin Ace Tapang | Professional Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robin Ace Tapang | Professional Portfolio</title>
+<meta name="description" content="Professional portfolio of Robin Ace Tapang, Bachelor of Industrial Technology - Computer Technology major.">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary-pink: #ff66cc;
-            --meta-blue: #00a2ff;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(20, 10, 30, 0.85);
-        }
+<!-- AOS Scroll Animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: #f5f5f5;
-            margin: 0;
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #0d0d0d, #1a001a);
+    color: #e5e5e5;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; }
 
-        header {
-            text-align: center;
-            padding: 6rem 1.5rem 4rem;
-            position: relative;
-        }
+  header {
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-        .profile-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 1rem;
-        }
+  /* Selfie and Name */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .profile-header img {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FF69B4;
+  }
+  .profile-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FF69B4;
+  }
+  .verified-badge {
+    width: 24px;
+    height: 24px;
+  }
 
-        .profile-photo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-pink);
-            box-shadow: 0 0 15px rgba(255,102,204,.4);
-        }
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    color: #fff;
+    font-weight: 600;
+    margin: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255,20,147,0.35);
+  }
 
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 0;
-        }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(13, 0, 13, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    z-index: 100;
+  }
+  nav a {
+    color: #e5e5e5;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav a:hover { color: #FF69B4; }
 
-        .verified-badge {
-            width: 22px;
-            height: 22px;
-            background: var(--meta-blue);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .verified-badge::after {
-            content: "✔";
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
+  section { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
+  h2 { font-size: 2rem; margin-bottom: 2rem; border-left: 4px solid #FF69B4; padding-left: 1rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+  .card {
+    background: rgba(26,0,26,0.85);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #4b004b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255,105,180,0.3);
+  }
 
-        .anime-visual-area {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            margin-top: 20px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  /* Nezuko Animation + Particle Container */
+  .nezuko-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 3rem;
+    height: 320px;
+  }
+  #nezuko-animation { width: 220px; height: 320px; z-index: 1; position: relative; }
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
 
-        #particles-js {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
+  /* Footer */
+  footer { text-align: center; padding: 3rem 1rem; background: #0a0010; color: #a3a3a3; }
 
-        #nezuko-animation {
-            z-index: 2;
-            font-size: 6rem;
-            animation: glow 2s infinite alternate;
-        }
+  /* Motivating quote style */
+  .quote {
+    font-style: italic;
+    margin-top: 2rem;
+    color: #FFB6C1;
+  }
 
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px #ff66cc); }
-            to { filter: drop-shadow(0 0 30px #ff99dd); }
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(10,10,10,.9);
-            backdrop-filter: blur(12px);
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 1rem;
-            z-index: 100;
-            border-bottom: 1px solid #222;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: .9rem;
-        }
-        nav a:hover { color: var(--primary-pink); }
-
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 4rem 1.5rem;
-        }
-
-        h2 {
-            border-left: 4px solid var(--primary-pink);
-            padding-left: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid #331a33;
-            transition: .3s;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-pink);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: .7rem 1.5rem;
-            border-radius: 50px;
-            background: linear-gradient(135deg,#ff66cc,#ff33aa);
-            color: #000;
-            font-weight: 600;
-            text-decoration: none;
-            margin: 10px 5px;
-        }
-
-        #quote-container {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: rgba(255,102,204,.05);
-            border-radius: 20px;
-            text-align: center;
-        }
-        #quote-text {
-            color: var(--primary-pink);
-            font-style: italic;
-            font-size: 1.1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem;
-            color: #555;
-            font-size: .8rem;
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="profile-wrapper" data-aos="fade-down">
-        <img src="selfie.jpg" alt="Robin Ace Tapang" class="profile-photo">
-        <h1>Robin Ace Tapang <span class="verified-badge"></span></h1>
-    </div>
-    <p>Bachelor of Industrial Technology | Computer Technology Major</p>
+  <div class="profile-header">
+    <img src="selfie.jpg" alt="Robin Ace Tapang">
+    <h1>Robin Ace Tapang <img class="verified-badge" src="verified-blue-badge.png" alt="Verified"></h1>
+  </div>
+  <p>Motivated Bachelor of Industrial Technology Undergraduate Majoring in Computer Technology</p>
 
-    <div class="anime-visual-area">
-        <div id="particles-js"></div>
-        <div id="nezuko-animation">🌸</div>
-    </div>
-
+  <div style="margin-top: 2rem;">
     <a href="#projects" class="btn">View Projects</a>
-    <a href="#contact" class="btn">Get In Touch</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+
+  <div class="nezuko-container">
+    <div id="nezuko-animation"></div>
+    <div id="particles-js"></div>
+  </div>
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#certificates">Certificates</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I am a motivated third-year student specializing in Computer Technology. I bridge the gap between hardware maintenance and software development.</p>
+  <h2>About Me</h2>
+  <p>
+    I am Robin Ace Tapang, a motivated Bachelor of Industrial Technology undergraduate majoring in Computer Technology. As a third-year student, I have developed comprehensive knowledge in both software and hardware systems, encompassing troubleshooting, system maintenance, and computer networking. 
+    I am proficient in basic programming using C++, JavaScript, and Python and have experience with database management using SQL. I am skilled in using Microsoft applications, Google Workspace, and other IDEs and software platforms relevant to programming. I possess hands-on experience in hardware configuration, basic network setup, and system optimization. 
+    My passion lies in blending software and hardware expertise to develop practical IT solutions and projects, and I am eager to continue learning and contributing in professional technology environments.
+  </p>
 </section>
 
 <section id="skills" data-aos="fade-up">
-    <h2>Technical Skills</h2>
-    <div class="grid">
-        <div class="card"><strong>Programming:</strong> C++, Python, JavaScript, SQL</div>
-        <div class="card"><strong>Hardware:</strong> Troubleshooting, Networking</div>
-        <div class="card"><strong>Web:</strong> HTML5, CSS3, Responsive Design</div>
-        <div class="card"><strong>Tools:</strong> MS Office, Google Workspace</div>
-    </div>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML, CSS, JavaScript</div>
+    <div class="card">C++, Python, SQL</div>
+    <div class="card">Hardware & System Troubleshooting</div>
+    <div class="card">Windows & Microsoft Apps, Google Workspace</div>
+    <div class="card">Database Management & Networking Basics</div>
+    <div class="card">Front-End Development Fundamentals</div>
+  </div>
 </section>
 
 <section id="projects" data-aos="fade-up">
-    <h2>Key Projects</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>QR Attendance System</h3>
-            <p>G.A.B Guardian AuroBox – automated QR attendance system.</p>
-        </div>
-        <div class="card">
-            <h3>Digital Portfolio</h3>
-            <p>High-performance portfolio with advanced animations.</p>
-        </div>
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>A professional web portfolio designed to showcase skills, projects, and achievements.</p>
     </div>
+    <div class="card">
+      <h3>Academic Computer Technology Projects</h3>
+      <p>Hands-on coursework projects in programming, system fundamentals, and IT concepts.</p>
+    </div>
+  </div>
+</section>
+
+<section id="achievements" data-aos="fade-up">
+  <h2>Achievements</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>G.A.B Guardian AuroBox QR Code Attendance System</h3>
+      <p>Thesis Project 2024</p>
+    </div>
+  </div>
+</section>
+
+<section id="certificates" data-aos="fade-up">
+  <h2>Certificates</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Comptechniques: Augment Your Tech Knowledge in the Vital Environment of Technology 2023</h3>
+    </div>
+    <div class="card">
+      <h3>TechXperts Workshops Sessions - Bulacan Tech Expo 2023</h3>
+    </div>
+  </div>
 </section>
 
 <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>📧 Email: yourname@email.com</p>
-    <p>📱 Phone (PH): <strong>+63 991 328 8572</strong></p>
-
-    <div id="quote-container">
-        <p id="quote-text"></p>
-    </div>
+  <h2>Contact</h2>
+  <p>If you would like to connect or discuss opportunities, feel free to reach out.</p>
+  <p>Email: <a href="mailto:msalobenyaa@gmail.com">msalobenyaa@gmail.com</a></p>
+  <p>Phone: +63 9913288572</p>
+  <div class="quote" id="quote"></div>
 </section>
 
 <footer>
-    © 2026 Robin Ace Tapang — All Rights Reserved
+  <p>© 2026 Robin Ace Tapang. All rights reserved.</p>
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
 
 <script>
-AOS.init({ duration: 1000, once: true });
+  // Initialize AOS
+  AOS.init({ duration: 1200 });
 
-const quotes = [
-    "Believe you can, and you're halfway there.",
-    "Dream big. Start small. Act now.",
-    "Success is built on consistency.",
+  // Load Nezuko Lottie Animation
+  lottie.loadAnimation({
+    container: document.getElementById('nezuko-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'nezuko_animation.json' // Replace with your Lottie JSON file
+  });
 
-    "Hindi mahalaga kung gaano kabagal, basta hindi ka humihinto.",
-    "Ang tagumpay ay bunga ng tiyaga.",
-    "Patuloy lang, may patutunguhan ka.",
-
-    "Başarı, vazgeçmeyenlerin ödülüdür.",
-    "Kendine inan, her şey mümkün.",
-    "Bugün zor, yarın efsane olacaksın."
-];
-
-document.getElementById("quote-text").textContent =
-    quotes[Math.floor(Math.random() * quotes.length)];
-
-particlesJS("particles-js", {
+  // Demon Slayer Particle Effects - Fire, Water, Air, Poison
+  tsParticles.load("particles-js", {
     particles: {
-        number: { value: 120 },
-        size: { value: 3 },
-        move: { speed: 2 },
-        opacity: { value: 0.7 },
-        line_linked: { enable: false },
-        color: { value: ["#ff4500","#00bfff","#7fff00","#b84dff","#ffd700"] }
+      number: { value: 80 },
+      color: { value: ["#FF4500","#1E90FF","#00FA9A","#800080"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.8 },
+      size: { value: { min: 2, max: 5 } },
+      move: { enable: true, speed: 3, direction: "none", out_mode: "out" },
+      line_linked: { enable: false }
     },
     interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" } }
+      events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+      modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
     }
-});
+  });
 
-let angle = 0;
-setInterval(() => {
-    angle += 0.05;
-    document.getElementById("nezuko-animation").style.transform =
-        `translateY(${Math.sin(angle)*15}px)`;
-}, 30);
+  // Motivating Quotes Array
+  const quotes = [
+    "Believe in yourself! / Manalig sa sarili mo! / Kendine inan!",
+    "Every step counts. / Bawat hakbang mahalaga. / Her adım önemlidir.",
+    "Your potential is limitless. / Walang hanggan ang iyong kakayahan. / Potansiyelin sınırsızdır."
+  ];
+  document.getElementById('quote').innerText = quotes[Math.floor(Math.random()*quotes.length)];
 </script>
 
 </body>
