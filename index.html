@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robin Ace Tapang | Web Portfolio</title>
+  <meta name="description" content="Portfolio of Robin Ace Tapang, a third-year Computer Technology undergraduate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    header {
+      padding: 4rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #020617, #020617);
+    }
+    header h1 { font-size: 2.5rem; font-weight: 700; }
+    header p { margin-top: 1rem; color: #94a3b8; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: #020617;
+      position: sticky;
+      top: 0;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #020617;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #020617;
+      color: #64748b;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Robin Ace Tapang</h1>
+  <p>Third-Year Computer Technology Undergraduate · Aspiring IT Professional</p>
+  <a class="btn" href="#projects">View My Work</a>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am Robin Ace Tapang, 22 years old, currently a third-year undergraduate taking up a Computer Technology course. I am focused on building strong foundations in software, hardware, and web technologies, with a growing interest in practical, real-world applications of IT.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML, CSS, JavaScript</div>
+    <div class="card">Basic Web Development</div>
+    <div class="card">Computer Hardware & Troubleshooting</div>
+    <div class="card">Windows OS & System Maintenance</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>A responsive personal website showcasing my background, skills, and projects.</p>
+    </div>
+    <div class="card">
+      <h3>Academic IT Projects</h3>
+      <p>Various coursework projects related to computer technology and system fundamentals.</p>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <p>You can download my full CV below.</p>
+  <a class="btn" href="Robin-Ace-Tapang-CV.pdf" download>Download CV</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>If you would like to connect, feel free to reach out.</p>
+  <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+</section>
+
+<footer>
+  <p>© 2026 Robin Ace Tapang. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
